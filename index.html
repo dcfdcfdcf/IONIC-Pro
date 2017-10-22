@@ -1,0 +1,333 @@
+<html ng-app="ionicApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>菜鸟教程(runoob.com)</title>
+    <link href="https://cdn.bootcss.com/ionic/1.3.2/css/ionic.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/my.css">
+    <script src="https://cdn.bootcss.com/ionic/1.3.2/js/ionic.bundle.min.js"></script>
+    <script type="text/javascript">
+      angular.module('ionicApp', ['ionic'])
+      .controller("meCtrl",function($scope){
+               
+      })      
+      .controller("findCtrl",function($scope){
+        $scope.items=[
+          {
+            avatarSrc:"img/ben.png",
+            person:"Ben",
+            article:["菜鸟教程 -- 学的不仅是技术，更是梦想！菜鸟教程 -- 学的不仅是技术，更是梦想！菜鸟教程 -- 学的不仅是技术，更是梦想！菜鸟教程 -- 学的不仅是技术，更是梦想！"],
+            article_img:"img/banner/banner.jpg",
+            date:"2017"
+          },
+          {
+            avatarSrc:"img/ben.png",
+            person:"Ben",
+            article:["菜鸟教程 -- 学的不仅是技术，更是梦想！菜鸟教程 -- 学的不仅是技术，更是梦想！菜鸟教程 -- 学的不仅是技术，更是梦想！菜鸟教程 -- 学的不仅是技术，更是梦想！"],
+            article_img:"img/banner/banner.jpg",
+            date:"2017"
+          },
+          {
+            avatarSrc:"img/ben.png",
+            person:"Ben",
+            article:["菜鸟教程 -- 学的不仅是技术，更是梦想！菜鸟教程 -- 学的不仅是技术，更是梦想！菜鸟教程 -- 学的不仅是技术，更是梦想！菜鸟教程 -- 学的不仅是技术，更是梦想！"],
+            article_img:"img/banner/banner.jpg",
+            date:"2017"
+          },
+          {
+            avatarSrc:"img/ben.png",
+            person:"Ben",
+            article:["菜鸟教程 -- 学的不仅是技术，更是梦想！菜鸟教程 -- 学的不仅是技术，更是梦想！菜鸟教程 -- 学的不仅是技术，更是梦想！菜鸟教程 -- 学的不仅是技术，更是梦想！"],
+            article_img:"img/banner/banner.jpg",
+            date:"2017"
+          }                  
+        ]       
+      })
+      .controller("peopleCtrl",function($scope){
+        $scope.items=[
+          {
+            avatarSrc:"img/ben.png",
+            person:"Ben",
+            chats:["在干吗？最近怎么样？"],
+            date:"2017"
+          },
+          {
+            avatarSrc:"img/ben.png",
+            person:"Ben",
+            chats:["在干吗？最近怎么样？"],
+            date:"2017"
+          },
+          {
+            avatarSrc:"img/ben.png",
+            person:"Ben",
+            chats:["在干吗？最近怎么样？"],
+            date:"2017"
+          },
+          {
+            avatarSrc:"img/ben.png",
+            person:"Ben",
+            chats:["在干吗？最近怎么样？"],
+            date:"2017"
+          }                   
+        ]       
+      })
+      .controller("chatCtrl",function($scope,$timeout,$ionicPopup,$ionicModal){
+        $scope.items=[
+          {
+            avatarSrc:"img/ben.png",
+            person:"Ben",
+            chats:["在干吗？最近怎么样？"],
+            date:"2017"
+          },
+          {
+            avatarSrc:"img/ben.png",
+            person:"Ben",
+            chats:["在干吗？最近怎么样？"],
+            date:"2017"
+          },
+          {
+            avatarSrc:"img/ben.png",
+            person:"Ben",
+            chats:["在干吗？最近怎么样？"],
+            date:"2017"
+          },
+          {
+            avatarSrc:"img/ben.png",
+            person:"Ben",
+            chats:["在干吗？最近怎么样？"],
+            date:"2017"
+          }                   
+        ],
+        //mo tai
+        // $ionicModal.fromTemplateUrl('modal.html', {
+        //   scope: $scope,
+        //   animation: 'slide-in-up'
+        // }).then(function(modal) {
+        //   $scope.modal = modal;
+        // });
+        // $scope.openModal = function() {
+        //   $scope.modal.show();
+        // };
+        $scope.longPress = function(){
+          var myPopup = $ionicPopup.show({
+            template:'<ion-list><ion-item>标为已读</ion-item><ion-item>置顶聊天</ion-item><ion-item>删除该聊天</ion-item></ion-list>',
+
+            scope: $scope,
+          });
+
+          $timeout(function() {
+            myPopup.close(); // 3秒后关闭弹窗
+         }, 3000);
+        }
+
+                      
+      })
+      .controller('RootCtrl', function($scope) {
+
+   
+
+  
+      })
+
+    </script>
+    
+  </head>
+  <body ng-controller="RootCtrl">
+
+    <ion-tabs class="tabs-icon-top tabs-light">
+      <ion-tab title="微信" icon-on="icon ion-chatbubble-working balanced" icon-off="icon ion-chatbubble-working " ng-controller="chatCtrl">
+        <ion-header-bar class="bar-dark"  align-title="center ">
+          
+          <div class="title">
+            <button class="button button-clear">微信(16)</button>
+          </div>         
+          <div class="buttons">
+            <button class="button button-icon ion-plus"></button>
+          </div>
+        </ion-header-bar>
+
+        <ion-content class="has-header" align-title="right">
+            <div class="bar bar-header item-input-inset">
+              <label class="item-input-wrapper">
+                <i class="icon ion-ios-search placeholder-icon"></i>
+                <input type="search" placeholder="Search">
+              </label>
+              <button class="button button-icon ">
+                <i class="icon ion-ios-mic-outline"></i>
+              </button>
+            </div>
+
+            <a class="item item-avatar"" href="#" ng-repeat="item in items" on-hold="longPress()">
+              <img src="img/ben.png">
+              <h2>{{item.person}}</h2>
+              <p>{{item.chats[0]}}</p>
+              <p class="text-right">{{item.date}}</p>
+            </a>
+
+        </ion-content>
+      </ion-tab>
+      <ion-tab title="通讯录" icon-on="icon ion-ios-people balanced" icon-off="icon ion-ios-people " ng-controller="peopleCtrl">
+  
+        <ion-header-bar class="bar-dark"  align-title="center">
+          <div class="title">
+           通讯录
+          </div>         
+          <div class="buttons">
+            <button class="button button-icon ion-plus"></button>
+          </div>
+        </ion-header-bar> 
+        
+        <ion-content has-tabs="true" on-refresh="onRefresh()">
+        <!-- 搜索  -->
+          <div class="bar bar-header item-input-inset">
+            <label class="item-input-wrapper">
+              <i class="icon ion-ios-search placeholder-icon"></i>
+              <input type="search" placeholder="Search">
+            </label>
+            <button class="button button-icon stabled">
+               <i class="icon ion-ios-mic-outline"></i>
+            </button>
+          </div>
+          <ion-refresher></ion-refresher>
+          <div class="ionic-pseudo">
+            <div class="list" style="margin-bottom:0;">
+                <a class="item item-icon-left" href="#">
+                  <i class=" icon ion-person-add energized  "></i>
+                  新的朋友
+                </a>
+                <a class="item item-icon-left" href="#">
+                  <i class=" icon ion-person-stalker balanced"></i>
+                  群聊
+                </a>
+                <a class="item item-icon-left" href="#">
+                  <i class=" icon ion-ios-pricetag positive"></i>
+                  标签
+                </a>
+                 <a class="item item-icon-left" href="#">
+                  <i class=" icon ion-person positive"></i>
+                  公众号
+                </a>                                         
+            </div>
+          </div>
+          <div class="row light-bg">
+            <div class="col col-100" style="height:30px;">星标朋友</div>
+          </div>
+          <div class="list">
+             <a class="item item-avatar" href="#" ng-repeat="item in items">
+              <img src="img/ben.png">
+              <h2>{{item.person}}</h2>
+            </a>             
+          </div>
+        </ion-content>
+      </ion-tab>
+
+      <ion-tab title="发现" icon-on="icon ion-paper-airplane balanced" icon-off="icon ion-paper-airplane" ng-controller="findCtrl">
+        <ion-header-bar class="bar-dark"  align-title="center">
+          <div class="buttons">
+            <a class="button icon-left ion-chevron-left button-clear button-light">发现</a>
+          </div>
+          <div class="title">
+            朋友圈
+          </div>         
+          <div class="buttons">
+            <button class="button button-icon"><i class="icon ion-camera"></i></button>
+          </div>
+        </ion-header-bar> 
+        <ion-content has-header="true">
+          <a class="item-thumbnail-top" href="#">
+            <img class="banner" src="img/banner/banner.jpg">
+          </a>
+          <div class="list avstar" style="">
+            <i class="item-thumbnail-right " href="#">
+              <img src="img/ben.png">
+              <p class="text-right" style="padding-right:120px;">YY</p>
+            </i>
+          </div>
+          <div class="list firends">
+
+            <a class="item item-avatar" href="#" ng-repeat="item in items">
+              <img src="img/ben.png">
+              <h2>{{item.person}}</h2>
+              <p class="text">
+                {{item.article}}
+              </p>
+              <p><img class="full-image" style="height:20%; width:100%" src="img/banner/banner.jpg"></p>
+              <p class="text-right"><i class="icon  button-large ion-chatbox"></i> </p>
+
+            </a>
+  
+          </div>
+
+        </ion-content>
+      </ion-tab>
+
+      <ion-tab title="我" icon-on="icon ion-person balanced" icon-off="icon ion-person" ng-controller="meCtrl">
+        <ion-header-bar class="bar-dark" align-title="center">
+         
+          <div class="title ">
+            我
+          </div>         
+
+        </ion-header-bar> 
+        <ion-content has-header="true">
+          <h4 class="padding-left">Settings</h4>
+          <ul class="list">
+            <li class="item item-toggle">
+               接受新消息通知
+               <label class="toggle toggle-balanced">
+                 <input type="checkbox">
+                 <div class="track">
+                   <div class="handle"></div>
+                 </div>
+               </label>
+            </li>
+            <li class="item item-toggle">
+               通知显示消息详情
+               <label class="toggle toggle-balanced">
+                 <input type="checkbox">
+                 <div class="track">
+                   <div class="handle"></div>
+                 </div>
+               </label>
+            </li>
+            <li class="item range">
+              <i class="icon ion-volume-low"></i>
+              <input type="range" name="volume">
+              <i class="icon ion-volume-high"></i>
+            </li> 
+            <li class="item range range-positive">
+            <i class="icon ion-ios-sunny-outline"></i>
+            <input type="range" name="volume" min="0" max="100" value="33">
+            <i class="icon ion-ios-sunny"></i>
+          </li>           
+          </ul>
+          <div class="row">
+            <div class="col col-100">相册</div>
+          </div>
+          <div class="row"> 
+            <div class="col col-100">钱包</div>
+          </div> 
+          <div class="row">   
+            <div class="col col-75">收藏</div>
+            <div class="col col-25">表情</div>
+          </div>
+        </ion-content>
+      </ion-tab>
+      
+    </ion-tabs>
+
+
+<!--     <script id="popup.html" type="text/ng-template">
+        <div >
+          <ion-content>
+            <ion-list>
+              <ion-item>标为已读</ion-item>
+              <ion-item>置顶聊天</ion-item>
+              <ion-item>删除该聊天</ion-item>
+              
+            </ion-list>
+          </ion-content>
+        </div>
+    </script> -->
+  </body>
+</html>
